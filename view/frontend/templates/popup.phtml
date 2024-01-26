@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var \Ultraplugin\NewsletterPopup\Block\Popup $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<div id="up-newsletter-popup" class="block newsletter up-newsletter-popup" style="display: none">
+    <div class="content asd">
+        <?= /* @noEscape */ $block->getCmsBlockContent() ?>
+        <?= $block->getChildHtml('newsletter.form.popup') ?>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#up-newsletter-popup": {
+            "Ultraplugin_NewsletterPopup/js/popup": {
+                "title": "<?= $escaper->escapeJs($block->getPopupTitle()) ?>",
+                "delay": "<?= $escaper->escapeJs($block->getPopupDelay()) ?>"
+            }
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * UltraPlugin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ultraplugin.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ultraplugin.com/end-user-license-agreement
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    UltraPlugin
+ * @package     Ultraplugin_NewsletterPopup
+ * @copyright   Copyright (c) UltraPlugin (https://ultraplugin.com/)
+ * @license     https://ultraplugin.com/end-user-license-agreement
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="root">
+            <block class="Ultraplugin\NewsletterPopup\Block\Popup" name="up.newsletter.popup" template="Ultraplugin_NewsletterPopup::popup.phtml" ifconfig="newsletter_popup/general/enable">
+                <block class="Magento\Newsletter\Block\Subscribe" name="newsletter.form.popup" template="Ultraplugin_NewsletterPopup::form.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

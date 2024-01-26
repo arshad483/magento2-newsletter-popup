@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * UltraPlugin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ultraplugin.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ultraplugin.com/end-user-license-agreement
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    UltraPlugin
+ * @package     Ultraplugin_NewsletterPopup
+ * @copyright   Copyright (c) UltraPlugin (https://ultraplugin.com/)
+ * @license     https://ultraplugin.com/end-user-license-agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="newsletter_popup" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Newsletter Popup</label>
+            <tab>ultraplugin</tab>
+            <resource>Ultraplugin_NewsletterPopup::newsletter_popup_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Title</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="delay_seconds" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Delay</label>
+                    <comment>Show popup after above delay seconds</comment>
+                    <validate>required-entry validate-number</validate>
+                </field>
+                <field id="cms_block" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Content</label>
+                    <validate>required-entry</validate>
+                    <comment>Select CMS block for popup content</comment>
+                    <source_model>Magento\Cms\Model\ResourceModel\Block\Collection</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

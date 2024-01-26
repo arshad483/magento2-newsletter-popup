@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var \Magento\Newsletter\Block\Subscribe $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<form class="form subscribe popup"
+      novalidate
+      action="<?= $escaper->escapeUrl($block->getFormActionUrl()) ?>"
+      method="post"
+      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+      id="newsletter-validate-detail-popup">
+    <div class="field newsletter">
+        <div class="control">
+            <input name="email" type="email" id="newsletter-popup"
+                   placeholder="<?= $escaper->escapeHtmlAttr(__('Enter your email address')) ?>"
+                   data-mage-init='{"mage/trim-input":{}}'
+                   data-validate="{required:true, 'validate-email':true}"/>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="action subscribe primary"
+                title="<?= $escaper->escapeHtmlAttr(__('Subscribe')) ?>"
+                type="submit"
+                aria-label="Subscribe">
+            <span><?= $escaper->escapeHtml(__('Subscribe')) ?></span>
+        </button>
+    </div>
+</form>
